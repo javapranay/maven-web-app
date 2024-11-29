@@ -4,12 +4,12 @@ pipeline {
         maven "maven-3.9.9"
     }
     stages {
-        stage('Clone') {
+        stage('Git Clone') {
             steps {
                git 'https://github.com/javapranay/maven-web-app.git'
             }
         }
-        stage('Build') {
+        stage('Maven Build') {
             steps {
                sh 'mvn clean package'
             }
